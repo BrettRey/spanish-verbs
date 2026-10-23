@@ -1,0 +1,4 @@
+#!/bin/sh
+# Resolves symlinks, so a link from ~/bin works.
+here=$(cd "$(dirname "$(readlink -f "$0")")" && pwd)
+exec python3 "$here/../verbos.py" "$@"
